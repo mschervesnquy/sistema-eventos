@@ -2,31 +2,39 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Noticia", {
+    await queryInterface.createTable("Ministrantes", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      titulo: {
+      nome: {
         type: Sequelize.STRING,
-      },
-      noticia: {
-        type: Sequelize.TEXT,
       },
       foto: {
         type: Sequelize.STRING,
       },
-      data: {
-        type: Sequelize.DATE,
+      sobre: {
+        type: Sequelize.STRING,
       },
-      eventoId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: "Eventos",
-          key: "id",
-        },
+      email: {
+        type: Sequelize.STRING,
+      },
+      facebook: {
+        type: Sequelize.STRING,
+      },
+      instagram: {
+        type: Sequelize.STRING,
+      },
+      linkedin: {
+        type: Sequelize.STRING,
+      },
+      twitter: {
+        type: Sequelize.STRING,
+      },
+      lattes: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
@@ -39,6 +47,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Noticia");
+    await queryInterface.dropTable("Ministrantes");
   },
 };

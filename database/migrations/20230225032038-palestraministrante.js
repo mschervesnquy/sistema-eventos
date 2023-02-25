@@ -1,32 +1,32 @@
 "use strict";
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Noticia", {
+    await queryInterface.createTable("oficinaministrante", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      titulo: {
-        type: Sequelize.STRING,
-      },
-      noticia: {
-        type: Sequelize.TEXT,
-      },
-      foto: {
-        type: Sequelize.STRING,
-      },
-      data: {
-        type: Sequelize.DATE,
-      },
-      eventoId: {
+      palestraId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Eventos",
+          model: "Palestra",
           key: "id",
         },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
+      },
+      ministranteId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Ministrante",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
       },
       createdAt: {
         allowNull: false,
@@ -38,7 +38,8 @@ module.exports = {
       },
     });
   },
+
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Noticia");
+    await queryInterface.dropTable("palestraministrante");
   },
 };

@@ -29,6 +29,7 @@ async function add(req, res) {
     eventoId: req.body.eventoId,
     foto: req.files.foto[0].filename,
   });
+  console.log(noticia);
   res.redirect("/admin/noticia/lst");
 }
 

@@ -1,0 +1,68 @@
+<%- include('../cabecalho') -%>
+<div class="body flex-grow-1 px-3">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header"><strong>Ministrante</strong></div>
+                    <div class="card-body">
+                        <div class="example">
+                            <div class="tab-content rounded-bottom">
+                                <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-739">
+                                    <form method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Nome</label>
+                                            <input class="form-control" name="nome" id="exampleFormControlInput1" type="text"
+                                                placeholder="Digite o nome do Ministrante!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput3">Sobre</label>
+                                            <textarea name="sobre" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">E-Mail</label>
+                                            <input class="form-control" name="email" id="exampleFormControlInput1" type="email"
+                                                placeholder="Digite o e-mail do Ministrante!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Facebook</label>
+                                            <input class="form-control" name="facebook" id="exampleFormControlInput1" type="url"
+                                                placeholder="Digite o link do Facebook do Ministrante!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Instagram</label>
+                                            <input class="form-control" name="instagram" id="exampleFormControlInput1" type="url"
+                                                placeholder="Digite o link do Instagram do Ministrante!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Linkedin</label>
+                                            <input class="form-control" name="linkedin" id="exampleFormControlInput1" type="url"
+                                                placeholder="Digite o link do Linkedin do Ministrante!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Twitter</label>
+                                            <input class="form-control" name="twitter" id="exampleFormControlInput1" type="url"
+                                                placeholder="Digite o link do Twitter do Ministrante!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Lattes</label>
+                                            <input class="form-control" name="lattes" id="exampleFormControlInput1" type="url"
+                                                placeholder="Digite o link do Currículo Lattes do Ministrante!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="formFile">Foto</label>
+                                            <input class="form-control" name="foto" id="formFile" type="file">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                                        <button type="reset" class="btn btn-light">Limpar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../rodape') -%>

@@ -1,0 +1,71 @@
+<%- include('../cabecalho') -%>
+<div class="body flex-grow-1 px-3">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header"><strong>Palestra</strong></div>
+                    <div class="card-body">
+                        <div class="example">
+                            <div class="tab-content rounded-bottom">
+                                <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-739">
+                                    <form method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput">Id</label>
+                                            <input class="form-control" readonly name="id" id="exampleFormControlInput" type="text" value="<%=Palestra.id%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Título</label>
+                                            <input class="form-control" name="titulo" id="exampleFormControlInput1" type="text"
+                                                placeholder="Digite o nome da Palestra!" value="<%=Palestra.titulo%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput3">Sobre</label>
+                                            <textarea name="resumo" class="form-control" id="exampleFormControlTextarea3" rows="3"><%=Palestra.sobre%></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput5">Data e Hora</label>
+                                            <input class="form-control" name="dataehora" id="exampleFormControlInput5" type="datetime-local"
+                                                placeholder="Digite a data e hora da palestra!" value="<%=moment(Palestra.dataehora).format('YYYY-MM-DDTHH:MM')%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="formFile">Evento</label>
+                                            <select class="form-control" name="eventoId">
+                                                <% Eventos.forEach(function(evento) { %>
+                                                    <option
+                                                        <% if(evento.id == Palestra.eventoId) { %>
+                                                            selected="selected"
+                                                        <% } %>
+                                                        value="<%=evento.id%>">
+                                                        <%=evento.nome%>
+                                                    </option>
+                                                <% }) %>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="formFile">Ministrantes</label>
+                                            <select multiple class="form-control" name="ministranteId">
+                                                <% Ministrantes.forEach(function(ministrante) { %>
+                                                    <option
+                                                        <% if(ministrante.id == Palestra.ministranteId) { %>
+                                                            selected="selected"
+                                                        <% } %>
+                                                        value="<%=ministrante.id%>">
+                                                        <%=ministrante.nome%>
+                                                    </option>
+                                                <% }) %>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Editar</button>
+                                        <button type="reset" class="btn btn-light">Limpar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../rodape') -%>
